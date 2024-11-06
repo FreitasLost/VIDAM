@@ -193,34 +193,84 @@
 
         /* Estilos Responsivos */
         @media (max-width: 768px) {
+            /* Header adjustments */
             header h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            
+            header h2 {
+                font-size: 1.2rem;
             }
 
-            .galeria {
-                gap: 15px;
+            /* Navigation adjustments */
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
             }
 
+            nav ul li {
+                margin: 0;
+                width: 100%;
+            }
+
+            nav ul li a {
+                width: 100%;
+                text-align: center;
+                box-sizing: border-box;
+            }
+
+            /* Main content adjustments */
+            main {
+                padding: 20px;
+            }
+
+            /* Gallery adjustments */
             .item {
-                flex: 1 1 calc(50% - 15px);
+                flex: 1 1 100%;
+                margin-bottom: 15px;
             }
 
+            /* Information section adjustments */
             .informacoes {
-                padding: 25px;
+                padding: 20px;
+                margin: 20px 10px;
+            }
+
+            .informacoes h2 {
+                font-size: 1.5rem;
             }
         }
 
         @media (max-width: 480px) {
             header {
-                padding: 20px 15px;
+                padding: 15px 10px;
             }
 
-            .item {
-                flex: 1 1 100%;
+            .lightbox img,
+            .lightbox video {
+                max-width: 95%;
+                max-height: 80vh;
             }
 
-            nav ul li a {
-                padding: 10px 20px;
+            .lightbox-close {
+                top: 10px;
+                right: 10px;
+                font-size: 24px;
+                padding: 10px;
+            }
+        }
+
+        /* Add touch-friendly tap targets */
+        @media (hover: none) {
+            nav ul li a,
+            .item,
+            .lightbox-close {
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+            }
+            
+            .item:active {
+                transform: scale(0.98);
             }
         }
     </style>
